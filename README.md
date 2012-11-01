@@ -1,3 +1,3 @@
 jexbooking
 ==========
-reserveren voor De Papillon
+component reserveren voor De Papillon
