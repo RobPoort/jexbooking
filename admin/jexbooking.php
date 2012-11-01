@@ -10,3 +10,12 @@ If(!JFactory::getUser()->authorize('core.manage', 'com_jexbooking')){
 JLoader::register('JexBookingHelper', dirname(__FILE__) . DS . 'helpers' . DS . 'jexbooking.php');
 
 jimport('joomla.application.component.controller');
+
+//get instance of controller
+$controller = JController::getInstance('JexBooking');
+
+//perform the requested task
+$controller->execute(JRequest::getCmd('task'));
+
+//redirect if set by the controller
+$controller->redirect();
