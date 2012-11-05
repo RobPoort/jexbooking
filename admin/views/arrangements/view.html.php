@@ -6,7 +6,8 @@ jimport('joomla.application.component.view');
 class JexBookingViewArrangements extends JView
 {
 	function display($tpl = null){
-		$this->items = $this->get('Items');
+		
+		$this->items = 'administrator Arrangementen';
 		
 		parent::display($tpl);
 	}
