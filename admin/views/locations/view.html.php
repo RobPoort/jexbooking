@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted Access');
 
 jimport('joomla.application.component.view');
 
-class JexBookingViewArrangements extends JView
+class JexBookingViewLocations extends JView
 {
 	function display($tpl = null){
 		

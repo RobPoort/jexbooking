@@ -19,6 +19,6 @@ class JexBookingController extends JController
 		parent::display($cachable);
 		
 		//set the submenu
-		JexBookingHelper::addSubmenu('Arrangements');
+		JexBookingHelper::addSubmenu('Arrangements');		
 	}
 }

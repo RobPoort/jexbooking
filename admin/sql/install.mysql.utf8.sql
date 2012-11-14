@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_location` (
   `type_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `desc` varchar(500) NOT NULL,
+  `published` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
@@ -10,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `desc` varchar(500) NOT NULL,
+  `published` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
@@ -19,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_attributes` (
   `desc` varchar(500) NOT NULL,
   `price` float(10,2) NOT NULL,
   `is_pn` int(1) NOT NULL DEFAULT '1',
+  `published` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
@@ -28,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_default_prices` (
 	`is_pn_min_price` int(1) NOT NULL DEFAULT '1',
 	`extra` float(10,2) NOT NULL,
 	`is_pn_extra` int(1) NOT NULL DEFAULT '1',
+	`published` int(1) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
@@ -41,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_arrangements` (
 	`price` float(10,2) NOT NULL,
 	`is_pa` int(1) NOT NULL DEFAULT '1',
 	`required` int(1) NOT NULL DEFAULT '0',
+	`published` int(1) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
