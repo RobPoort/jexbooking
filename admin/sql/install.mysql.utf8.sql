@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_default_prices` (
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 
-CREATE TABLE IF NOT EXISTS `` (
+CREATE TABLE IF NOT EXISTS `#__jexbooking_arrangements` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`name` varchar(50) NOT NULL,
 	`desc` varchar(500) NOT NULL,
