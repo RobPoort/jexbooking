@@ -4,10 +4,10 @@ defined('_JEXEC') or die('Restricted Access');
 abstract class JexBookingHelper
 {
 	//submenu definiëren
-	public static function addSubmenu($submenu){
-		JSubMenuHelper::addEntry(JText::_('COM_JEXBOOKING_SUBMENU_ARRANGEMENTS'),'index.php?option=com_jexbooking&view=arrangements',$submenu = 'arrangements');
+	public static function addSubmenu($submenu){		
 		JSubMenuHelper::addEntry(JText::_('COM_JEXBOOKING_SUBMENU_LOCATIONS'),'index.php?option=com_jexbooking&view=locations',$submenu = 'locations');
-		JSubMenuHelper::addEntry(JText::_('COM_JEXBOOKING_PLACES'),'index.php?option=com_jexbooking&view=places',$submenu = 'places');
+		JSubMenuHelper::addEntry(JText::_('COM_JEXBOOKING_SUBMENU_ARRANGEMENTS'),'index.php?option=com_jexbooking&view=arrangements',$submenu = 'arrangements');
+		
 		
 		//set some global property
 		$document = JFactory::getDocument();

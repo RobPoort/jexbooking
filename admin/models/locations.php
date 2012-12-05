@@ -10,7 +10,7 @@ class JexBookingModelLocations extends JModelList
 		$db = JFactory::getDBO();
 		$query = $db->getQuery(true);
 		$query->from('#__jexbooking_location as jl');
-		$query->select('jl.id as id, jl.name as name');
+		$query->select('*');
 		
 		return $query;
 	}
