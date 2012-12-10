@@ -3,6 +3,8 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_location` (
   `type_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `desc` varchar(500) NOT NULL,
+  `total_number` int(11) NOT NULL,
+  `available_number` int(11) NOT NULL,
   `published` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
