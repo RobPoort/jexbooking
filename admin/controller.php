@@ -13,7 +13,7 @@ class JexBookingController extends JController
 	function display($cachable = false){
 		
 		//set default view if not set by the task
-		JRequest::setVar('view',JRequest::getCmd('view','Arrangements'));
+		JRequest::setVar('view',JRequest::getCmd('view','Locations'));
 		
 		//call the parent behavior
 		parent::display($cachable);
