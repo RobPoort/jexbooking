@@ -22,12 +22,41 @@ class JexBookingViewLocations extends JView
 		$this->pagination = $pagination;
 		
 		//set the toolbar
-		//$this->addToolBar();		
+		$this->addToolBar();		
 		
 		//set the document
 		$this->setDocument();
 		
 		parent::display($tpl);
+	}
+	
+	/**
+	 *	setting the toolbar
+	 */
+	protected function addToolBar()
+	{
+		$canDo = JexBookingHelper::getActions();
+		JToolBarHelper::title(JText::_('COM_JEXBOOKING_MANAGER_LOCATIONS'), 'jexbooking');
+		if($canDo->get('core.create'))
+		{
+			JToolBarHelper::addNew('location.add', 'JTOOLBAR_NEW');
+		}
+		if($canDo->get('core.edit'))
+		{
+			JToolBarHelper::editList('location.edit', 'JTOOLBAR_EDIT');
+		}
+		if($canDo->get('core.delete'))
+		{
+			JToolBarHelper::deleteList('', 'locations.delete', 'JTOOLBAR_DELETE');
+		}
+		if($canDo->get('core.admin'))
+		{
+			JToolBarHelper::divider();
+			JToolBarHelper::preferences('com_jexbooking');
+		}
+	
+	
+	
 	}
 	/**
 	*	method to set up the document properties
