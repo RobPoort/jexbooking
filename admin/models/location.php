@@ -21,14 +21,14 @@ class JexBookingModelLocation extends JModelAdmin
 				or parent::allowEdit($data, $key);
 	}
 	/**
-	 *	Returns a reference to a Table object, always creating it
-	 *
-	 *	@param	type	the table type to instantiate
-	 *	@param	string	a prefix for the table class name. Optional
-	 *	@param	array	configuration array for the model. Optional
-	 *	@param	JTable	a database object
-	 */
-	public function getTable($type = 'JexBooking', $prefix = 'JexBookingTable', $config = array())
+	*	Returns a reference to a Table object, always creating it
+	*
+	*	@param	type	the table type to instantiate
+	*	@param	string	a prefix for the table class name. Optional
+	*	@param	array	configuration array for the model. Optional
+	*	@param	JTable	a database object
+	*/
+	public function getTable($type = 'Locations', $prefix = 'JexBookingTable', $config = array())
 	{
 		return JTable::getInstance($type,$prefix,$config);
 	}
@@ -41,7 +41,7 @@ class JexBookingModelLocation extends JModelAdmin
 	public function getForm($data = array(), $loadData = true)
 	{
 		//get the form
-		$form = $this->loadForm('com_jexbooking.location', 'jexitem', array('control'=>'jform', 'load_data'=>$loadData));
+		$form = $this->loadForm('com_jexbooking.location', 'location', array('control'=>'jform', 'load_data'=>$loadData));
 		if(empty($form))
 		{
 			return false;
@@ -56,7 +56,7 @@ class JexBookingModelLocation extends JModelAdmin
 	//TODO hier nog naar kijken, ivm validatie (velden)
 	public function getScript()
 	{
-		return 'administrator/components/com_jexpricelist/models/forms/jexitem.js';
+		return 'administrator/components/com_jexbooking/models/forms/location.js';
 	}
 	/**
 	 *	method to get the data to be inserted in the form
