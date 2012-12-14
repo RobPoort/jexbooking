@@ -22,12 +22,13 @@ class JexBookingViewLocations extends JView
 		$this->pagination = $pagination;
 		
 		//set the toolbar
-		$this->addToolBar();		
+		$this->addToolBar();
+
+		parent::display($tpl);
 		
 		//set the document
 		$this->setDocument();
-		
-		parent::display($tpl);
+				
 	}
 	
 	/**
@@ -45,7 +46,7 @@ class JexBookingViewLocations extends JView
 		{
 			JToolBarHelper::editList('location.edit', 'JTOOLBAR_EDIT');
 		}
-		if($canDo->get('core.delete'))
+	if($canDo->get('core.delete'))
 		{
 			JToolBarHelper::deleteList('', 'locations.delete', 'JTOOLBAR_DELETE');
 		}

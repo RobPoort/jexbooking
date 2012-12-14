@@ -15,8 +15,8 @@ class JexBookingModelLocations extends JModelList
 		
 		return $query;
 	}
-	function publish(){
-	
+function publish()
+	{
 		$data = JRequest::get('post');
 		$value = JRequest::getCmd('task');
 		$ids = JRequest::getVar('cid', array(), 'post', 'array');

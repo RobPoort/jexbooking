@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted Access');
 
 jimport('joomla.application.component.controlleradmin');
 
-class JexBookingControllerLocations extends JController{
+class JexBookingControllerLocations extends JControllerAdmin{
 	
 	/**
 	 * * Proxy for getModel
