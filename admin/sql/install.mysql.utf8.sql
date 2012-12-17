@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_attributes` (
   `desc` varchar(500) NOT NULL,
   `price` float(10,2) NOT NULL,
   `is_pn` int(1) NOT NULL DEFAULT '1',
+  `has_price` int(1) NOT NULL DEFAULT '0',
   `published` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
