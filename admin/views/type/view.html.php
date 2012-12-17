@@ -39,8 +39,8 @@ class JexBookingViewType extends JView
 		$userId = $user->id;
 		$isNew = $this->item->id == 0;
 		$canDo = JexBookingHelper::getActions($this->item->id);
-		JToolBarHelper::title($isNew ? JText::_('COM_JEXBOOKING_MANAGER_TYPE_NEW')
-		: JText::_('COM_JEXBOOKING_MANAGER_TYPE_EDIT'), 'jexbooking');
+		JToolBarHelper::title($isNew ? JText::_('COM_JEXBOOKING_TYPE_NEW')
+		: JText::_('COM_JEXBOOKING_TYPE_EDITING'), 'jexbooking');
 		//built the actions for new and existings records
 		if($isNew)
 		{
