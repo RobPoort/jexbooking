@@ -64,5 +64,16 @@
 			<option value="0">JUNPUBLISHED</option>
 			<option value="1">JPUBLISHED</option>
 		</field>	
+	</fieldset>
+	<fieldset name="attributen"
+	>
+		<field
+			name="bullocks"
+			type="text"
+			label="bullocks"
+			description=""
+			required="false"
+			default=""
+		/>
 	</fieldset>	
 </form>

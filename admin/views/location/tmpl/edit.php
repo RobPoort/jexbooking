@@ -18,6 +18,16 @@ JHTML::_('behavior.formvalidation');
 		</fieldset>
 	</div>
 	<div class="width-40 fltrt">
+		<fieldset class="adminform">
+			<legend><?php echo JText::_('COM_JEXBOOKING_LOCATION_ATTRIBUTES'); ?></legend>
+			<ul class="adminformlist">
+				<?php foreach($this->form->getFieldset('attributen') as $field) : ?>
+					<li><?php echo $field->label;echo $field->input; ?></li>
+				<?php endforeach; ?>
+			</ul>
+		</fieldset>
+	</div>
+	<div class="width-40 fltrt">
 		<?php
 			echo JHtml::_('sliders.start', 'jexbooking-slider');
 			foreach($params as $name=>$fieldset) :

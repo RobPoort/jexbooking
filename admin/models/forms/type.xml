@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form
+	addrulepath="/administrator/components/com_jexbooking/models/rules"
+>
+	<fieldset name="details"
+	>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="name"
+			type="text"
+			label=""
+			description=""
+			required="true"
+			default=""
+		/>
+	</fieldset>
+</form>

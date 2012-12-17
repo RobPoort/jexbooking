@@ -55,6 +55,8 @@ CREATE TABLE IF NOT EXISTS `#__jexbooking_arrangements` (
 CREATE TABLE IF NOT EXISTS `#__jexbooking_xref_attributes` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`attribute_id` int(11) NOT NULL,
+	`type_id` int(11) NOT NULL,
+	`location_id` int(11) NOT NULL,
 	`default_id` int(11) NOT NULL,
 	`arr_id` int(11) NOT NULL,
 	PRIMARY KEY (`id`)

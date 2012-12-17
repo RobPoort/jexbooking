@@ -15,7 +15,26 @@ JHTML::_('behavior.formvalidation');
 					<li><?php echo $field->label;echo $field->input; ?></li>
 				<?php endforeach; ?>
 			</ul>
-		</fieldset>
+		</fieldset>		
+	</div>
+	<div class="width-60 fltlft">
+		<fieldset class="adminform">
+			<legend><?php echo JText::_('COM_JEXBOOKING_ATTRIBUTE_PRICE_DETAILS'); ?></legend>			
+			<ul class="adminformlist">
+				<?php foreach($this->form->getFieldset('more_details') as $field) : ?>
+					<li><?php echo $field->label;echo $field->input; ?></li>
+				<?php endforeach; ?>
+			</ul>
+		</fieldset>		
+	</div>
+	<div class="width-60 fltlft">
+		<fieldset class="adminform">				
+			<ul class="adminformlist">
+				<?php foreach($this->form->getFieldset('publish') as $field) : ?>
+					<li><?php echo $field->label;echo $field->input; ?></li>
+				<?php endforeach; ?>
+			</ul>
+		</fieldset>		
 	</div>
 	<div class="width-40 fltrt">
 		<?php
