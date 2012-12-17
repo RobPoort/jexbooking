@@ -18,14 +18,45 @@ class JexBookingViewAttributes extends JView
 			return false;
 		}
 		
-		//assign data to the view
+		//assign data to the view	
+		
 		$this->items = $items;
+		
 		$this->pagination = $pagination;
+		
+		//add the toolbar
+		$this->addToolBar();
 		
 		parent::display($tpl);
 		
 		//set the document
 		$this->setDocument();
+	}
+	
+	/**
+	 *	setting the toolbar
+	 */
+	protected function addToolBar()
+	{
+		$canDo = JexBookingHelper::getActions();
+		JToolBarHelper::title(JText::_('COM_JEXBOOKING_MANAGER_ATTRIBUTES'), 'jexbooking');
+		if($canDo->get('core.create'))
+		{
+			JToolBarHelper::addNew('attribute.add', 'JTOOLBAR_NEW');
+		}
+		if($canDo->get('core.edit'))
+		{
+			JToolBarHelper::editList('attribute.edit', 'JTOOLBAR_EDIT');
+		}
+		if($canDo->get('core.delete'))
+		{
+			JToolBarHelper::deleteList('', 'attributes.delete', 'JTOOLBAR_DELETE');
+		}
+		if($canDo->get('core.admin'))
+		{
+			JToolBarHelper::divider();
+			JToolBarHelper::preferences('com_jexbooking');
+		}
 	}
 	
 	/**
