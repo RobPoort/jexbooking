@@ -23,7 +23,7 @@
 			description="COM_JEXBOOKING_TYPE_DESC_DESC"
 			required="false"
 			default=""
-		/>
+		/>		
 	</fieldset>
 	<fieldset name="publish"
 	>
@@ -41,12 +41,13 @@
 	<fieldset name="attributen"
 	>
 		<field
-			name="bullocks"
+			name="attribute_id"
 			type="attributentypes"
 			label="attributen"
 			description=""
 			required="false"
-			default=""
+			multiple="true"
+			default=""			
 		/>
 	</fieldset>	
 </form>

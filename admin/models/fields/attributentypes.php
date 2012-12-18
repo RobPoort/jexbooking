@@ -13,13 +13,41 @@ class JFormFieldAttributenTypes extends JFormField
 	
 	public function getInput(){
 		
+		$this->id = JRequest::getInt('id');
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->from('#__jexbooking_xref_attributes as jxa');
+		$query->select('attribute_id');
+		$query->where('type_id = '.$this->id);
+		$db->setQuery($query);
+		$xrefs = $db->loadResultArray();
+		
 		$db = JFactory::getDBO();
 		$query = $db->getQuery(true);
 		$query->from('#__jexbooking_attributes as ja');
-		//$query->join('RIGHT','')
+		//$query->join('LEFT','#__jexbooking_xref_attributes as jxa ON ja'..' = jxa.type.id')
 		$query->select('*');
-		$query->where('id='.$this->item->id);
+		//$query->where('id='.$this->id);
+		$db->setQuery($query);
+		$rows = $db->loadObjectList();
 		
-		var_dump($this->item->id);
+		foreach($rows as $row){
+			if(in_array($row->id, $xrefs)){
+				$row->checked = 'checked="checked"';
+			} else {
+				$row->checked = '';
+			}
+		}
+		//$form = array();
+		$form = '<fieldset class="checkboxes" id="jform_attribute_id"><ul>';
+		foreach($rows as $row){
+			//$form .= '<li><input type="checkbox" name="jform['.$row->name.']" '.$row->checked.' value="'.$row->id.'" />'.$row->name.'</li>';
+			$form .= '<li><input type="checkbox" name="jform[attribute_id][]" '.$row->checked.' value="'.$row->id.'" />'.$row->name.'</li>';
+		}
+		$form .= '</ul></fieldset>';
+		
+		
+		return $form;
+		
 	}
 }

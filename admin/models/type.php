@@ -73,4 +73,5 @@ class JexBookingModelType extends JModelAdmin
 		}
 		return $data;
 	}
+
 }

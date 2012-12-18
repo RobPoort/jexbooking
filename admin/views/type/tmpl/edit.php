@@ -20,11 +20,11 @@ JHTML::_('behavior.formvalidation');
 	<div class="width-40 fltrt">
 		<fieldset class="adminform">
 			<legend><?php echo JText::_('COM_JEXBOOKING_TYPE_ATTRIBUTES'); ?></legend>
-			<ul class="adminformlist">
-				<?php foreach($this->form->getFieldset('attributen') as $field) : ?>
-					<li><?php echo $field->label;echo $field->input; ?></li>
-				<?php endforeach; ?>
-			</ul>
+			
+			<?php foreach($this->form->getFieldset('attributen') as $field) : ?>
+			<?php echo $field->label; ?><br />			
+			<?php echo $field->input; ?>
+			<?php endforeach; ?>
 		</fieldset>
 	</div>	
 	<div class="width-60 fltlft">
