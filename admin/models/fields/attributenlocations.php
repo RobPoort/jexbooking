@@ -4,12 +4,12 @@ defined('_JEXEC') or die('Restricted Access');
 jimport('joomla.form.helper');
 JFormHelper::loadFieldClass('Checkboxes');
 
-class JFormFieldAttributenTypes extends JFormField
+class JFormFieldAttributenLocations extends JFormField
 {
 	/**
 	 * het formfieldtype
 	 */
-	protected $type = 'attributentypes';
+	protected $type = 'attributenlocations';
 	
 	public function getInput(){
 		
@@ -18,8 +18,9 @@ class JFormFieldAttributenTypes extends JFormField
 		$query = $db->getQuery(true);
 		$query->from('#__jexbooking_xref_attributes as jxa');
 		$query->select('attribute_id');
-		$query->where('type_id = '.$this->id);
+		$query->where('location_id = '.$this->id);
 		$db->setQuery($query);
+		//TODO ook de xrefs van de parent moeten opgehaald worden
 		$xrefs = $db->loadResultArray();
 		
 		$db = JFactory::getDBO();
@@ -37,7 +38,7 @@ class JFormFieldAttributenTypes extends JFormField
 			}
 		}
 		//$form = array();
-		$form = '<fieldset class="checkboxes" id="jform_attribute_id"><ul>';
+		$form = '<fieldset class="checkboxes" id="jform_attribute_id"><ul class="adminform">';
 		foreach($rows as $row){			
 			$form .= '<li><input type="checkbox" name="jform[attribute_id][]" '.$row->checked.' value="'.$row->id.'" />'.$row->name.'</li>';
 		}

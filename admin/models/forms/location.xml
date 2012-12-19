@@ -68,12 +68,13 @@
 	<fieldset name="attributen"
 	>
 		<field
-			name="bullocks"
-			type="text"
-			label="bullocks"
+			name="attribute_id"
+			type="attributenlocations"
+			label="attributen"
 			description=""
 			required="false"
-			default=""
+			multiple="true"
+			default=""			
 		/>
 	</fieldset>	
 </form>

@@ -22,7 +22,7 @@ JHTML::_('behavior.formvalidation');
 			<legend><?php echo JText::_('COM_JEXBOOKING_TYPE_ATTRIBUTES'); ?></legend>
 			
 			<?php foreach($this->form->getFieldset('attributen') as $field) : ?>
-			<?php echo $field->label; ?><br />			
+			<?php //echo $field->label; ?><br />			
 			<?php echo $field->input; ?>
 			<?php endforeach; ?>
 		</fieldset>
