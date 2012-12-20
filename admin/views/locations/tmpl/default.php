@@ -7,7 +7,7 @@ JHtml::_('behavior.multiselect');
 $items = $this->items;
 //TODO hidden fields
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_jexbooking&view=locations'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_jexbooking'); ?>" method="post" name="adminForm" id="adminForm">
 	<table class="adminlist">
 		<thead>
 			<tr>
@@ -58,7 +58,7 @@ $items = $this->items;
 					<?php echo $item->desc; ?>
 				</td>
 				<td class="center">
-					<?php echo JHtml::_('jgrid.published', $item->published, $i, 'locations', true); ?>
+					<?php echo JHtml::_('jgrid.published', $item->published, $i, 'locations.', true);?>
 				</td>
 				<td>
 					<?php echo $item->type_name; ?>
@@ -69,8 +69,8 @@ $items = $this->items;
 		</tbody>
 	</table>
 	<div>
-	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="boxchecked" value="0" />
-	<?php echo JHtml::_('form.token'); ?>
+		<input type="hidden" name="task" value="" />
+		<input type="hidden" name="boxchecked" value="0" />
+		<?php echo JHtml::_('form.token'); ?>
 	</div>
 </form>

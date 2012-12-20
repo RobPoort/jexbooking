@@ -55,7 +55,7 @@ $items = $this->items;
 					<?php echo $item->desc; ?>
 				</td>
 				<td class="center">
-					<?php echo JHtml::_('jgrid.published', $item->published, $i, 'types', true); ?>
+					<?php echo JHtml::_('jgrid.published', $item->published, $i, 'types.', true); ?>
 				</td>				
 			</tr>
 			<?php }
